@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traveloop — AI Travel Companion</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- SCREEN SELECTOR TABS -->
+    <div class="screen-tabs">
+      <button onclick="showScreen('home')" id="tab-home" class="screen-tab active">🏠 Home</button>
+      <button onclick="showScreen('chat')" id="tab-chat" class="screen-tab">💬 Chat</button>
+      <button onclick="showScreen('map')"  id="tab-map"  class="screen-tab">🗺 Map</button>
+      <button onclick="showScreen('budget')" id="tab-budget" class="screen-tab">💰 Budget</button>
+      <button onclick="showScreen('trips')"  id="tab-trips"  class="screen-tab">✈️ Trips</button>
+      <button onclick="showScreen('profile')" id="tab-profile" class="screen-tab">👤 Profile</button>
+    </div>
+
+    <!-- PHONE SHELL -->
+    <div class="app-shell">
+
+      <!-- AURORA GLOWS -->
+      <div class="aurora aurora-1"></div>
+      <div class="aurora aurora-2"></div>
+      <div class="aurora aurora-3"></div>
+
+      <!-- STATUS BAR -->
+      <div class="status-bar">
+        <span>9:41</span>
+        <span class="status-icons">
+          <i class="ti ti-wifi"></i>
+          <i class="ti ti-battery-3"></i>
+        </span>
+      </div>
+
+      <!-- ════ HOME SCREEN ════ -->
+      <div class="screen active" id="screen-home">
+        <div class="content">
+          <div class="greeting-strip">
+            <div>
+              <div class="greeting-text">Good evening,<br>Arjun ✦</div>
+              <div class="greeting-sub">Your Goa trip is in 3 days</div>
+            </div>
+            <div class="avatar-circle">AK</div>
+          </div>
+
+          <div class="active-trip-card" onclick="showScreen('map')">
+            <div class="active-trip-top">
+              <div>
+                <div class="trip-eyebrow">Active Trip</div>
+                <div class="trip-heading">Goa, India 🏖️</div>
+                <div class="trip-dates">May 13 – 18 • 5 nights</div>
+              </div>
+              <div class="days-badge">
+                <div class="days-num">3</div>
+                <div class="days-lbl">DAYS LEFT</div>
+              </div>
+            </div>
+            <div class="stress-section">
+              <div class="stress-label-row">
+                <span>Trip stress level</span>
+                <span class="stress-ok">Low stress ✓</span>
+              </div>
+              <div class="stress-bar"><div class="stress-fill"></div></div>
+              <div class="stress-ends"><span>Relaxed</span><span>Intense</span></div>
+            </div>
+          </div>
+
+          <div class="chips">
+            <div class="chip" onclick="showScreen('chat')"><i class="ti ti-message-circle-2"></i>Plan trip</div>
+            <div class="chip" onclick="showScreen('map')"><i class="ti ti-map-pin"></i>Explore</div>
+            <div class="chip" onclick="showScreen('budget')"><i class="ti ti-wallet"></i>Budget</div>
+            <div class="chip"><i class="ti ti-users"></i>Group</div>
+            <div class="chip"><i class="ti ti-alert-triangle"></i>Emergency</div>
+          </div>
+
+          <div class="stat-strip">
+            <div class="stat-tile"><div class="val cyan">₹48K</div><div class="lbl">Budget remaining</div></div>
+            <div class="stat-tile"><div class="val purple">12</div><div class="lbl">Activities planned</div></div>
+            <div class="stat-tile"><div class="val orange">4.8★</div><div class="lbl">Compatibility</div></div>
+          </div>
+
+          <div class="section-hdr">
+            <span class="section-title">Today's highlight</span>
+            <span class="section-link" onclick="showScreen('map')">See all →</span>
+          </div>
+          <div class="place-card">
+            <div class="place-icon orange-bg">🏖️</div>
+            <div class="place-info"><div class="place-name">Baga Beach sunset</div><div class="place-sub">Candolim · 4.8 km away</div></div>
+            <div class="place-time">6:12 PM</div>
+          </div>
+          <div class="place-card">
+            <div class="place-icon purple-bg">🍜</div>
+            <div class="place-info"><div class="place-name">Thalassa restaurant</div><div class="place-sub">Greek & Mediterranean</div></div>
+            <div class="place-time">8:30 PM</div>
+          </div>
+
+          <div class="ai-suggestion">
+            <div class="ai-suggestion-hdr">
+              <div class="ai-mini-orb">AI</div>
+              <span class="ai-suggestion-title">Traveloop suggests</span>
+            </div>
+            <div class="ai-suggestion-body">Rain forecast at 4 PM tomorrow. I've moved your scooter ride to 10 AM and found a cozy rooftop café for the afternoon.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ CHAT SCREEN ════ -->
+      <div class="screen" id="screen-chat">
+        <div class="chat-header">
+          <div class="chat-orb">AI</div>
+          <div>
+            <div class="chat-orb-name">Traveloop AI</div>
+            <div class="online-dot">● Online</div>
+          </div>
+        </div>
+        <div class="content chat-content">
+          <div class="chat-messages">
+            <div class="msg-ai">
+              <div class="ai-avatar">AI</div>
+              <div class="bubble ai-bubble">Hey Arjun! Ready to finalize your Goa itinerary? 🌊 Where do you want to start?</div>
+            </div>
+            <div class="bubble user-bubble">I want more beach time and less tourist traps</div>
+            <div class="msg-ai">
+              <div class="ai-avatar">AI</div>
+              <div>
+                <div class="bubble ai-bubble">Love it! I've found 3 hidden gems near Ashwem that most tourists miss. Want a look?</div>
+                <div class="destination-card">
+                  <div class="dest-img">🏖️<div class="dest-badge">Hidden gem</div></div>
+                  <div class="dest-body">
+                    <div class="dest-name">Ashwem Beach</div>
+                    <div class="dest-meta">North Goa · 45 min from hotel</div>
+                    <div class="dest-tags">
+                      <span class="dest-tag green-tag">✓ Budget friendly</span>
+                      <span class="dest-tag cyan-tag">🌅 Sunset spot</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bubble user-bubble">Yes! Add it to day 2</div>
+            <div class="msg-ai">
+              <div class="ai-avatar">AI</div>
+              <div class="bubble ai-bubble">Done! Day 2 updated. ✅ I've also shifted the spice plantation tour to the morning so you get the full afternoon at Ashwem.</div>
+            </div>
+            <div class="msg-ai">
+              <div class="ai-avatar">AI</div>
+              <div class="bubble ai-bubble typing-bubble">
+                <span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-bar">
+          <input class="chat-input" placeholder="Ask anything about your trip…" />
+          <button class="mic-btn" aria-label="Voice input"><i class="ti ti-microphone"></i></button>
+        </div>
+      </div>
+
+      <!-- ════ MAP SCREEN ════ -->
+      <div class="screen" id="screen-map">
+        <div class="content">
+          <div class="map-canvas">
+            <div class="map-grid"></div>
+            <svg class="map-svg" viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="routeGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#06B6D4"/>
+                  <stop offset="100%" stop-color="#8B5CF6"/>
+                </linearGradient>
+              </defs>
+              <path d="M 50 200 Q 120 80 190 160 Q 260 240 330 120" stroke="url(#routeGrad)" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity="0.8"/>
+              <circle cx="50" cy="200" r="8" fill="#06B6D4"/>
+              <circle cx="190" cy="160" r="8" fill="#8B5CF6"/>
+              <circle cx="330" cy="120" r="8" fill="#F97316"/>
+              <rect x="20" y="215" width="80" height="22" rx="8" fill="rgba(11,20,38,0.85)"/>
+              <text x="60" y="230" font-size="10" fill="#F0F4FF" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="500">Hotel Vivanta</text>
+              <rect x="155" y="172" width="72" height="22" rx="8" fill="rgba(11,20,38,0.85)"/>
+              <text x="191" y="187" font-size="10" fill="#F0F4FF" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="500">Baga Beach</text>
+              <rect x="296" y="133" width="76" height="22" rx="8" fill="rgba(11,20,38,0.85)"/>
+              <text x="334" y="148" font-size="10" fill="#F0F4FF" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="500">Thalassa</text>
+            </svg>
+            <div class="weather-overlay">
+              <span class="weather-icon">⛅</span>
+              <div><div class="weather-temp">28°C</div><div class="weather-desc">Partly cloudy</div></div>
+            </div>
+            <div class="zoom-controls">
+              <button aria-label="Zoom in">+</button>
+              <button aria-label="Zoom out">−</button>
+            </div>
+          </div>
+
+          <div class="day-tabs">
+            <div class="day-tab active">Day 1</div>
+            <div class="day-tab">Day 2</div>
+            <div class="day-tab">Day 3</div>
+            <div class="day-tab">Day 4</div>
+            <div class="day-tab">Day 5</div>
+          </div>
+
+          <div class="place-card"><div class="place-icon cyan-bg">🏨</div><div class="place-info"><div class="place-name">Check-in: Taj Vivanta</div><div class="place-sub">Candolim · Confirmed</div></div><div class="place-time">2:00 PM</div></div>
+          <div class="place-card"><div class="place-icon orange-bg">🏖️</div><div class="place-info"><div class="place-name">Baga Beach</div><div class="place-sub">1.2 km walk · 85 min</div></div><div class="place-time">4:30 PM</div></div>
+          <div class="place-card"><div class="place-icon purple-bg">🍽️</div><div class="place-info"><div class="place-name">Britto's Sea Food</div><div class="place-sub">Baga Road · ₹800/person</div></div><div class="place-time">8:00 PM</div></div>
+          <div class="place-card"><div class="place-icon green-bg">🎵</div><div class="place-info"><div class="place-name">Curlies Beach Shack</div><div class="place-sub">Anjuna · Live music tonight</div></div><div class="place-time">10:30 PM</div></div>
+        </div>
+      </div>
+
+      <!-- ════ BUDGET SCREEN ════ -->
+      <div class="screen" id="screen-budget">
+        <div class="content">
+          <div class="section-hdr">
+            <span class="section-title">Budget tracker</span>
+            <span style="font-size:11px;color:var(--muted);">Goa 2025</span>
+          </div>
+
+          <div class="budget-ring-wrap">
+            <svg width="180" height="180" viewBox="0 0 180 180">
+              <defs>
+                <linearGradient id="budgetGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#8B5CF6"/>
+                  <stop offset="100%" stop-color="#06B6D4"/>
+                </linearGradient>
+              </defs>
+              <circle cx="90" cy="90" r="70" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="20"/>
+              <circle cx="90" cy="90" r="70" fill="none" stroke="url(#budgetGrad)" stroke-width="20" stroke-dasharray="263 176" stroke-dashoffset="-44" stroke-linecap="round"/>
+              <text x="90" y="82" text-anchor="middle" font-size="22" font-weight="700" fill="#F0F4FF" font-family="Syne,sans-serif">₹48K</text>
+              <text x="90" y="100" text-anchor="middle" font-size="11" fill="rgba(240,244,255,0.5)" font-family="DM Sans,sans-serif">remaining</text>
+              <text x="90" y="116" text-anchor="middle" font-size="10" fill="#10B981" font-family="DM Sans,sans-serif">60% of ₹80K</text>
+            </svg>
+          </div>
+
+          <div style="padding:0 16px 4px;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:0.8px;text-transform:uppercase;">Spending zone</div>
+          <div class="zone-bar">
+            <div class="zone-segment" style="background:var(--green);flex:3;"></div>
+            <div class="zone-segment" style="background:var(--orange);flex:2;opacity:0.4;"></div>
+            <div class="zone-segment" style="background:var(--red);flex:1.5;opacity:0.3;"></div>
+            <div class="zone-marker"><div class="zone-marker-label">You're here</div></div>
+          </div>
+          <div class="zone-labels"><span>Safe zone</span><span>Risk zone</span><span>Over budget</span></div>
+
+          <div class="section-hdr" style="padding-top:8px;"><span class="section-title" style="font-size:15px;">Breakdown</span></div>
+          <div class="expense-row"><div class="expense-label"><div class="expense-dot" style="background:#8B5CF6;"></div>Accommodation</div><div class="expense-amount">₹18,000</div></div>
+          <div class="expense-row"><div class="expense-label"><div class="expense-dot" style="background:#F97316;"></div>Food & Dining</div><div class="expense-amount">₹8,500</div></div>
+          <div class="expense-row"><div class="expense-label"><div class="expense-dot" style="background:#06B6D4;"></div>Transport</div><div class="expense-amount">₹3,200</div></div>
+          <div class="expense-row"><div class="expense-label"><div class="expense-dot" style="background:#10B981;"></div>Activities</div><div class="expense-amount">₹2,300</div></div>
+          <div class="expense-row"><div class="expense-label"><div class="expense-dot" style="background:rgba(240,244,255,0.3);"></div>Remaining</div><div class="expense-amount cyan">₹48,000</div></div>
+
+          <div class="ai-tip">
+            <div class="ai-tip-hdr">💡 AI tip</div>
+            <div class="ai-tip-body">Switching Day 3 dinner from Thalassa to a local shack saves ₹1,200 — no quality loss.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ TRIPS SCREEN ════ -->
+      <div class="screen" id="screen-trips">
+        <div class="content">
+          <div class="section-hdr">
+            <span class="section-title">My trips</span>
+            <span class="section-link">+ New trip</span>
+          </div>
+
+          <div class="trip-card" onclick="showScreen('map')">
+            <div class="trip-cover" style="background:linear-gradient(135deg,#0d3a5e,#1e6b8c);">🏖️<div class="trip-status upcoming">Upcoming</div></div>
+            <div class="trip-body">
+              <div class="trip-name">Goa Beach Escape</div>
+              <div class="trip-meta">May 13 – 18, 2025 · 5 nights · Solo + 2</div>
+              <div class="trip-stats"><div class="trip-stat"><strong>₹80K</strong>Budget</div><div class="trip-stat"><strong>12</strong>Activities</div><div class="trip-stat"><strong>Low</strong>Stress</div></div>
+            </div>
+          </div>
+
+          <div class="trip-card">
+            <div class="trip-cover" style="background:linear-gradient(135deg,#1a1a2e,#2d1b69);">🏔️<div class="trip-status saved">Saved</div></div>
+            <div class="trip-body">
+              <div class="trip-name">Manali Snow Trek</div>
+              <div class="trip-meta">December 2025 · 7 nights · Group of 4</div>
+              <div class="trip-stats"><div class="trip-stat"><strong>₹1.2L</strong>Budget</div><div class="trip-stat"><strong>8</strong>Activities</div><div class="trip-stat"><strong>Medium</strong>Stress</div></div>
+            </div>
+          </div>
+
+          <div class="trip-card">
+            <div class="trip-cover" style="background:linear-gradient(135deg,#1a3a1a,#2d6b2d);">🌿<div class="trip-status completed">Completed</div></div>
+            <div class="trip-body">
+              <div class="trip-name">Kerala Backwaters</div>
+              <div class="trip-meta">Feb 10 – 14, 2025 · 4 nights</div>
+              <div class="trip-stats"><div class="trip-stat"><strong>4.9★</strong>Rated</div><div class="trip-stat"><strong>₹62K</strong>Spent</div><div class="trip-stat"><strong>Zero</strong>Stress</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ PROFILE SCREEN ════ -->
+      <div class="screen" id="screen-profile">
+        <div class="content">
+          <div class="profile-hero">
+            <div class="profile-avatar">AK</div>
+            <div>
+              <div class="profile-name">Arjun Kumar</div>
+              <div class="profile-sub">23 trips · Explorer tier</div>
+              <div style="margin-top:6px;"><span class="streak-badge">🔥 7-trip streak</span></div>
+            </div>
+          </div>
+
+          <div class="pref-section-label">Travel style</div>
+          <div class="tag-cloud">
+            <div class="tag active">🏖️ Beach</div>
+            <div class="tag active">🍽️ Foodie</div>
+            <div class="tag active">🌅 Sunsets</div>
+            <div class="tag inactive">🏔️ Adventure</div>
+            <div class="tag inactive">🏛️ History</div>
+            <div class="tag active">🎵 Nightlife</div>
+            <div class="tag inactive">🧘 Wellness</div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="pref-section-label">Settings</div>
+
+          <div class="pref-row"><span class="pref-label">AI voice assistant</span><div class="toggle on" onclick="this.classList.toggle('on');this.classList.toggle('off');"></div></div>
+          <div class="pref-row"><span class="pref-label">Smart notifications</span><div class="toggle on" onclick="this.classList.toggle('on');this.classList.toggle('off');"></div></div>
+          <div class="pref-row"><span class="pref-label">Weather alerts</span><div class="toggle on" onclick="this.classList.toggle('on');this.classList.toggle('off');"></div></div>
+          <div class="pref-row"><span class="pref-label">Offline maps</span><div class="toggle off" onclick="this.classList.toggle('on');this.classList.toggle('off');"></div></div>
+          <div class="pref-row"><span class="pref-label">Budget alerts</span><div class="toggle on" onclick="this.classList.toggle('on');this.classList.toggle('off');"></div></div>
+
+          <div class="member-since">
+            <div class="ms-label">Member since</div>
+            <div class="ms-date">January 2024</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ BOTTOM NAV ════ -->
+      <div class="bottom-nav">
+        <button class="nav-btn active" id="nav-home" onclick="showScreen('home')" aria-label="Home"><i class="ti ti-home"></i><span>Home</span></button>
+        <button class="nav-btn" id="nav-map" onclick="showScreen('map')" aria-label="Map"><i class="ti ti-map-2"></i><span>Map</span></button>
+        <button class="nav-btn" id="nav-trips" onclick="showScreen('trips')" aria-label="Trips"><i class="ti ti-plane"></i><span>Trips</span></button>
+        <button class="nav-btn" id="nav-profile" onclick="showScreen('profile')" aria-label="Profile"><i class="ti ti-user-circle"></i><span>Profile</span></button>
+      </div>
+
+    </div><!-- end app-shell -->
+  </div><!-- end page-wrap -->
+
+  <script src="app.js"></script>
+</body>
+</html>
